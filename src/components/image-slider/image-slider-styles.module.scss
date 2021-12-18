@@ -1,0 +1,28 @@
+@keyframes slide {
+  0% {
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+@keyframes slide_reverse {
+  0% {
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.slide {
+  animation: slide 500ms linear forwards;
+}
+
+.slide_right {
+  animation: slide 500ms linear forwards;
+}
+
+.slide_left {
+  animation: slide_reverse 500ms linear forwards;
+}
