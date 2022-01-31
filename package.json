@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "react-error-overlay": "6.0.9",
     "@storybook/addon-actions": "^6.4.8",
     "@storybook/addon-essentials": "^6.4.8",
     "@storybook/addon-links": "^6.4.8",

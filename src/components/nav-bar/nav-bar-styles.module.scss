@@ -1,3 +1,14 @@
 .navbar_container {
   border-bottom: solid 1px #e4e9f2;
 }
+
+.basket_count {
+  height: 13px;
+  width: 19px;
+  border-radius: 6.5px;
+  color: white;
+  position: absolute;
+  top: -30%;
+  right: -30%;
+  font-size: 10px;
+}

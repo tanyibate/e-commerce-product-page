@@ -14,6 +14,8 @@ export default function ImageSlider({ images }) {
   const [direction, setDirection] = useState("right");
   const [animate, setAnimate] = useState(false);
   const readjustGallery = (direction) => {
+    console.log("123");
+
     let oldGallery = [...gallery];
     if (direction === "right") {
       if (oldGallery[oldGallery.length - 1].position === images.length - 1) {
@@ -60,6 +62,7 @@ export default function ImageSlider({ images }) {
       <div className="relative overflow-hidden w-full h-full min-w-full min-h-full">
         <div
           className={`absolute top-0 left-0 transform -translate-x-full w-full h-full flex ${animationClass}`}
+          id="slider"
           onAnimationEnd={() => {
             readjustGallery(direction);
             setAnimate(false);
@@ -70,7 +73,7 @@ export default function ImageSlider({ images }) {
             return (
               <img
                 src={page.image}
-                alt=""
+                alt={`product image ${page.position}`}
                 key={index}
                 className="min-w-full w-full h-full"
               />
@@ -84,7 +87,8 @@ export default function ImageSlider({ images }) {
           if (clickable) setAnimate(true);
           setClickable(false);
         }}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 h-8 w-8 flex justify-center items-center bg-white rounded-full"
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 h-8 w-8 flex justify-center items-center rounded-full z-50 bg-white"
+        id="previous-button"
       >
         <img src={iconPrevious} alt="previous image icon" />
       </div>
@@ -95,6 +99,7 @@ export default function ImageSlider({ images }) {
           setClickable(false);
         }}
         className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-8 flex justify-center items-center bg-white rounded-full"
+        id="next-button"
       >
         <img src={iconNext} alt="next image icon" />
       </div>
