@@ -2,6 +2,7 @@ import React from "react";
 import PageLayout from "../../components/page-layout/PageLayout";
 import ProductDescription from "../../components/product-description/ProductDescription";
 import ProductImages from "../../components/product-images/ProductImages";
+import sneakerImage from "../../assets/images/image-product-1-thumbnail.jpg";
 
 export default function ItemPage() {
   const product = {
@@ -11,6 +12,7 @@ export default function ItemPage() {
     price: 250.0,
     discount: 0.5,
     id: 123,
+    image: sneakerImage,
   };
   return (
     <PageLayout>

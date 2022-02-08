@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ItemContext } from "../item-provider/ItemProvider";
 import logo from "../../assets/images/logo.svg";
 import avatar from "../../assets/images/image-avatar.png";
@@ -7,16 +7,18 @@ import burgerIcon from "../../assets/icons/icon-menu.svg";
 import styles from "./nav-bar-styles.module.scss";
 
 export default function NavBar() {
-  const menuOptions = ["Collectionss", "Men", "Women", "About", "Contact"];
+  const menuOptions = ["Collections", "Men", "Women", "About", "Contact"];
   const { itemsState } = useContext(ItemContext);
   const [items, setItems] = itemsState;
+  const { cartState } = useContext(ItemContext);
+  const [cartActive, setCartActive] = cartState;
 
   const itemCount = items.reduce((previousCount, currentItem) => {
     return previousCount + currentItem.number;
   }, 0);
   return (
     <nav
-      className={`h-20 tablet:h-32 ${styles.navbar_container}  w-full fixed px-6 lg:px-0 bg-white flex justify-center z-30`}
+      className={`h-20 tablet:h-32 ${styles.navbar_container}  w-full fixed px-6 lg:px-0 bg-white flex justify-center z-20`}
     >
       <div className="flex items-center h-full justify-between w-full lg:w-10/12">
         <div className="flex items-baseline">
@@ -34,7 +36,10 @@ export default function NavBar() {
         <div
           className={`${styles.interactive_section} flex h-full items-center`}
         >
-          <div className="relative mr-6">
+          <div
+            className="relative mr-6 cursor-pointer"
+            onClick={() => setCartActive(!cartActive)}
+          >
             <img src={basketIcon} alt="" className={`${styles.basket_image}`} />
             {itemCount && (
               <div className={`bg-orange ${styles.basket_count}`}>

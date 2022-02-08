@@ -14,9 +14,15 @@ function ItemProvider({ children }) {
       id: 123,
     },
   ]);
+  const [cartActive, setCartActive] = useState(false);
 
   return (
-    <ItemContext.Provider value={{ itemsState: [items, setItems] }}>
+    <ItemContext.Provider
+      value={{
+        itemsState: [items, setItems],
+        cartState: [cartActive, setCartActive],
+      }}
+    >
       {children}
     </ItemContext.Provider>
   );
