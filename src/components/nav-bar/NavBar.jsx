@@ -8,9 +8,8 @@ import styles from "./nav-bar-styles.module.scss";
 
 export default function NavBar() {
   const menuOptions = ["Collections", "Men", "Women", "About", "Contact"];
-  const { itemsState } = useContext(ItemContext);
+  const { itemsState, cartState } = useContext(ItemContext);
   const [items, setItems] = itemsState;
-  const { cartState } = useContext(ItemContext);
   const [cartActive, setCartActive] = cartState;
 
   const itemCount = items.reduce((previousCount, currentItem) => {
@@ -41,7 +40,7 @@ export default function NavBar() {
             onClick={() => setCartActive(!cartActive)}
           >
             <img src={basketIcon} alt="" className={`${styles.basket_image}`} />
-            {itemCount && (
+            {itemCount > 0 && (
               <div className={`bg-orange ${styles.basket_count}`}>
                 {itemCount}
               </div>
