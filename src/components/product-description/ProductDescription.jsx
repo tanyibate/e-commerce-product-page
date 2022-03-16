@@ -1,7 +1,6 @@
-import React, { useReducer, useContext } from "react";
+import React, { useReducer } from "react";
 import AddToCartButton from "../add-to-cart/AddToCartButton";
 import AddDecreaseNumberOfItems from "../number-of-items/AddDecreaseNumberOfItems";
-import { ItemContext } from "../item-provider/ItemProvider";
 
 const initialState = { count: 0 };
 
@@ -19,8 +18,6 @@ function reducer(state, action) {
 }
 
 export default function ProductDescription({ product }) {
-  const { itemsState } = useContext(ItemContext);
-  const [items, setItems] = itemsState;
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (

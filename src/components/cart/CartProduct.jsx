@@ -13,11 +13,7 @@ export default function CartProduct({ item }) {
   };
   return (
     <div className="flex justify-between text-sm text-lightBlack items-center">
-      <img
-        src={item.image}
-        alt="product image"
-        className="rounded-md h-12 w-12"
-      />
+      <img src={item.image} alt="product" className="rounded-md h-12 w-12" />
       <div>
         <p className="text-sm">{item.name}</p>
         <p className="text-left">

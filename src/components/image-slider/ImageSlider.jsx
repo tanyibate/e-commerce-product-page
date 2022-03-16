@@ -73,7 +73,7 @@ export default function ImageSlider({ images }) {
             return (
               <img
                 src={page.image}
-                alt={`product image ${page.position}`}
+                alt={`product ${page.position}`}
                 key={index}
                 className="min-w-full w-full h-full"
               />
@@ -90,7 +90,7 @@ export default function ImageSlider({ images }) {
         className="absolute left-2 top-1/2 transform -translate-y-1/2 h-8 w-8 flex justify-center items-center rounded-full z-50 bg-white"
         id="previous-button"
       >
-        <img src={iconPrevious} alt="previous image icon" />
+        <img src={iconPrevious} alt="previous icon" />
       </div>
       <div
         onClick={() => {
@@ -101,7 +101,7 @@ export default function ImageSlider({ images }) {
         className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-8 flex justify-center items-center bg-white rounded-full"
         id="next-button"
       >
-        <img src={iconNext} alt="next image icon" />
+        <img src={iconNext} alt="next icon" />
       </div>
     </div>
   );

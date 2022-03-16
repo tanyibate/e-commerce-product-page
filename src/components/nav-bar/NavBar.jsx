@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ItemContext } from "../item-provider/ItemProvider";
 import logo from "../../assets/images/logo.svg";
 import avatar from "../../assets/images/image-avatar.png";
@@ -9,7 +9,7 @@ import styles from "./nav-bar-styles.module.scss";
 export default function NavBar() {
   const menuOptions = ["Collections", "Men", "Women", "About", "Contact"];
   const { itemsState, cartState } = useContext(ItemContext);
-  const [items, setItems] = itemsState;
+  const items = itemsState[0];
   const [cartActive, setCartActive] = cartState;
 
   const itemCount = items.reduce((previousCount, currentItem) => {
@@ -47,7 +47,7 @@ export default function NavBar() {
             )}
           </div>
 
-          <img src={avatar} alt="avatar image" className="h-6 tablet:h-16" />
+          <img src={avatar} alt="avatar" className="h-6 tablet:h-16" />
         </div>
       </div>
     </nav>

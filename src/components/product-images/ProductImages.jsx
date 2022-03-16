@@ -37,7 +37,7 @@ export default function ProductImages() {
     <div className="w-11/12">
       <img
         src={images[currentImagePosition]}
-        alt="currently selected product image"
+        alt="currently selected product"
         className={`${tabletImage()}  rounded-md mb-6 cursor-pointer`}
         height="300px"
         onClick={() => setLightBoxActive(true)}

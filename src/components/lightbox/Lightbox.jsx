@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import closeIcon from "../../assets/icons/close.svg";
 
 export default function Lightbox({ images, position, thumbnails, disable }) {
@@ -35,7 +35,7 @@ export default function Lightbox({ images, position, thumbnails, disable }) {
         </div>
         <img
           src={images[currentImagePosition]}
-          alt="currently selected product image"
+          alt="currently selected product"
           className="rounded-lg mb-6 w-full"
         />
         <div className={`inline-grid gap-x-4 grid-cols-4 w-full px-12`}>
