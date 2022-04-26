@@ -4,17 +4,19 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
-body {
+body,
+html {
   margin: 0;
   font-family: "Kumbh Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+
   width: 100%;
 }
 
 #root {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 }
